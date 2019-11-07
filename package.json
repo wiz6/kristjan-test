@@ -1,9 +1,14 @@
 {
-  "name": "hello-world-express",
-  "description": "Hello World test app",
-  "version": "0.0.1",
-  "private": true,
+  "name": "knative-serving-helloworld",
+  "version": "1.0.0",
+  "description": "Simple hello world sample in Node",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "Apache-2.0",
   "dependencies": {
-    "express": "3.x"
+    "express": "^4.16.4"
   }
 }
