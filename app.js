@@ -1,12 +1,16 @@
 var express = require('express');
 var app = express();
+var db = require('./db');
+global.__root   = __dirname + '/'; 
 
-// Routes
-app.get('/', function(req, res) {
-  res.send('Kristjanile meeldivad koerad!');
+app.get('/api', function (req, res) {
+  res.status(200).send('API works.');
 });
 
-// Listen
-var port = process.env.PORT || 3000;
-app.listen(port);
-console.log('Listening on localhost:'+ port);
+var UserController = require(__root + 'user/UserController');
+app.use('/api/users', UserController);
+
+var AuthController = require(__root + 'auth/AuthController');
+app.use('/api/auth', AuthController);
+
+module.exports = app;
